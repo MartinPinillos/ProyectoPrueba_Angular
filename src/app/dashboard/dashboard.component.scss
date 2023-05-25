@@ -1,0 +1,15 @@
+.example-container {
+    width: 100%; //por defecto viene 500px, si quiero que ocupe toda la pantalla pongo 100% y 100vh(height)
+    height: 100vh;
+  }
+  
+  .example-sidenav-content {
+    main { 
+        padding:1rem; 
+    }
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+  

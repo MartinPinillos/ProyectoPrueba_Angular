@@ -1,0 +1,27 @@
+<form [formGroup]="formularioRegistro">
+<mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input 
+    [formControl]="nombreControl"
+    matInput 
+    placeholder="Nombre">
+
+    <!--matSuffix coloca el icono a la Defecha-->
+    <!--matPrefix coloca el icono a la Izquierda-->
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+    <!--Mensaje de abajo -->
+    <mat-hint>minimo 6 caracteres</mat-hint>
+
+    <mat-error>Este campo es requerido</mat-error>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+    <mat-label>Comida favorita</mat-label>
+    <mat-select>
+        <mat-option>Pizza</mat-option>
+        <mat-option>Cafe</mat-option>
+        <mat-option>Helado</mat-option>
+    </mat-select>
+</mat-form-field>
+</form>
