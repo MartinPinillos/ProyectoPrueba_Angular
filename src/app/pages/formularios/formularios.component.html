@@ -1,3 +1,6 @@
+<p [appFontSize]="10" *appRepetir="5">
+    Hola Mundo
+</p>
 <form [formGroup]="formularioRegistro">
 <mat-form-field appearance="fill">
     <mat-label>Nombre</mat-label>
@@ -13,15 +16,37 @@
     <!--Mensaje de abajo -->
     <mat-hint>minimo 6 caracteres</mat-hint>
 
-    <mat-error>Este campo es requerido</mat-error>
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-    <mat-label>Comida favorita</mat-label>
-    <mat-select>
-        <mat-option>Pizza</mat-option>
-        <mat-option>Cafe</mat-option>
-        <mat-option>Helado</mat-option>
-    </mat-select>
+    <!--Recorro todos los errores de nombreControl, pero necesito convertir con el KeyValue los errors(objetos)
+    en arrays -->
+    <mat-error *ngFor="let error of nombreControl.errors | keyvalue">
+        {{ error | controlErrorMessages }}
+    </mat-error>
 </mat-form-field>
 </form>
+
+<!--Nuevo campo contraseña-->
+<form [formGroup]="formularioRegistro">
+    <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input 
+        [formControl]="emailControl"
+        matInput 
+        placeholder="Email">
+    
+        <!--matSuffix coloca el icono a la Defecha-->
+        <!--matPrefix coloca el icono a la Izquierda-->
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    
+        <!--Mensaje de abajo -->
+        <mat-hint>minimo 6 caracteres</mat-hint>
+    
+        <!--Recorro todos los errores de nombreControl, pero necesito convertir con el KeyValue los errors(objetos)
+        en arrays -->
+        <mat-error *ngFor="let error of emailControl.errors | keyvalue">
+            {{ error | controlErrorMessages }}
+        </mat-error>
+    </mat-form-field>
+    </form>
+
+<!--Para imprimir en un json en la web-->
+<!--<pre>{{nombreControl.errors | keyvalue | json}}</pre>-->

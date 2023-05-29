@@ -8,6 +8,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import { PipesModule } from 'src/app/shared/pipes/pipes.module';
+import { DirectivesModule } from 'src/app/shared/directives/directives.module';
 
 
 
@@ -23,7 +25,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    PipesModule,
+    DirectivesModule
   ],
   exports:[
     FormulariosComponent
